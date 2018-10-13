@@ -18,7 +18,7 @@ do
 done
 
 if [ $compiled -eq 0 ]; then
-	g++ -std=c++11 qsort-naive-simple.cpp -O3 -o bin/qsort-naive.o -fopenmp
+	g++ -std=c++11 qsort-naive-simple.cpp -o bin/qsort-naive.o -fopenmp
 fi
 
 if [ $compiled -eq 1 ] || [ $? -eq 0 ]; then

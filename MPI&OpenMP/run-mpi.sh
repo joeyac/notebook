@@ -18,11 +18,11 @@ do
 done
 
 if [ $compiled -eq 0 ]; then
-	mpic++ qsort-mpi-simple.cpp -O3 -o bin/qsort-mpi.o
+	mpic++ qsort-mpi-simple.cpp -o bin/qsort-mpi.o
 fi
 
 if [ $compiled -eq 1 ] || [ $? -eq 0 ]; then
-	mpiexec -n $workers bin/qsort-mpi.o $n $seed
+	mpiexec --allow-run-as-root -n $workers bin/qsort-mpi.o $n $seed
 	exit $?
 else
 	exit 2
