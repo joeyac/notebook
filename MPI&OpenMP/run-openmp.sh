@@ -18,11 +18,12 @@ do
 done
 
 if [ $compiled -eq 0 ]; then
-	g++ -std=c++11 qsort-openmp-simple.cpp -o bin/qsort-openmp.o -fopenmp
+	g++ -std=c++11 qsort-openmp-simple.cpp -O3 -o bin/qsort-openmp.o -fopenmp
 fi
 
 if [ $compiled -eq 1 ] || [ $? -eq 0 ]; then
 	bin/qsort-openmp.o $n $seed $workers
+    exit $?
 else
 	exit 2
 fi
